@@ -1,0 +1,9 @@
+.todo-input {
+	width: 300px;
+	height: 22px;
+	padding-left: 5px;
+}
+
+.todo-input.ng-invalid.ng-dirty {
+	border: 1px solid red;
+}

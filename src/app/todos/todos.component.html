@@ -1,0 +1,26 @@
+<app-todo-form (create)="create($event)"></app-todo-form>
+
+<!-- <div class="toggle">
+	<button (click)="selectTodoList(true)" [ngClass]="{'button--primary': isTodoListSelected, 'button--secondary': !isTodoListSelected}" class="button">todo</button>
+	<button (click)="selectTodoList(false)" [ngClass]="{'button--primary': !isTodoListSelected, 'button--secondary': isTodoListSelected}" class="button">done</button>
+</div> -->
+
+<div class="toggle">
+	<button routerLink="/todo" 
+		routerLinkActive="button--primary" 
+		#rlaTodo="routerLinkActive"
+		class="button"
+		[class.button--secondary]="!rlaTodo.isActive">todo</button>
+	<button routerLink="/done" 
+		routerLinkActive="button--primary" 
+		#rlaDone="routerLinkActive"
+		class="button"
+		[ngClass]="{'button--secondary': !rlaDone.isActive}">done</button>
+</div>
+
+<router-outlet></router-outlet>
+<app-todo-list 
+	[todos]="todos" 
+	(setDone)="setDone($event)"
+	(delete)="delete($event)">
+</app-todo-list>

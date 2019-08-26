@@ -1,0 +1,7 @@
+<li *ngIf="!item.done">
+	{{item.title}}
+	<button class="right button button--secondary"
+		(click)="onDelete()">Delete</button>
+	<button class="right button button--secondary"
+		(click)="onSetDone()">Done</button>
+</li>

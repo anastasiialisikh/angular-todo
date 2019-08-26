@@ -1,4 +1,13 @@
+
+import { LocalstorageService } from './localstorage.service';
 import { Component } from '@angular/core';
+
+import { Todo } from './todo';
+import { TodoService } from './todo.service';
+
+
+import { Observable, of } from 'rxjs';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +15,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todo';
+	title = 'Todo App';
 }
